@@ -1,0 +1,20 @@
+<!-- Estende o template base.html, utilizando a sintaxe do Jinja2-->
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="register-container">
+        <h1>Login - Capture Face</h1>
+        
+        <!-- Exibe o email do usuário -->
+        <p class="email-display">Email: {{ email }}</p>
+        
+        <!-- Contêiner para o vídeo da câmera -->
+        <div class="video-container">
+            <video id="video" width="640" height="480" autoplay></video>
+            <button type="button" id="capture" class="btn btn-primary">Capturar</button>
+        </div>
+    </div>
+    
+    <!-- Script para controlar a captura de imagem, utilizando o código do login.js -->
+    <script src="{{ url_for('static', filename='js/login.js') }}"></script>
+{% endblock %}

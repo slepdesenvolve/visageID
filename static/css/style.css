@@ -1,0 +1,304 @@
+/* Estiliza o corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eeeeee;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estiliza o contêiner principal */
+.container {
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+}
+
+/* Estilo para o título principal */
+h1 {
+    font-size: 2.3em;
+    text-align: center;
+    color: #333;
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+
+/* Estilo para a lista de tarefas */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Estilo para cada item da lista de tarefas */
+ul li {
+    background: #fff;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column; /* Allow buttons to move below description */
+    transition: box-shadow 0.3s;
+}
+
+/* Efeito de sombra quando o mouse passa sobre um item */
+ul li:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para a informação da tarefa */
+.task-info {
+    word-wrap: break-word; /* Ensure long words break */
+    overflow-wrap: break-word; /* Ensure long words break */
+    flex-grow: 1;
+    margin-bottom: 10px; /* Add margin below description */
+}
+
+/* Estilo para o contêiner dos botões da tarefa */
+.task-buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Estilo para cada botão dentro do contêiner de botões da tarefa */
+.task-buttons a {
+    margin-right: 5px;
+}
+
+/* Estilo para os links */
+a {
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
+/* Efeito de cor quando o mouse passa sobre um link */
+a:hover {
+    color: #fff;
+}
+
+/* Estilo para o formulário */
+form {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+/* Estilo para rótulos no formulário */
+form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* Estilo para campos de entrada no formulário */
+form input[type="text"],
+form textarea {
+    width: calc(100% - 22px);  /* Ajustado para evitar overflow */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Estilo para botões no formulário */
+form button {
+    background: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Efeito de cor e escala quando o mouse passa sobre um botão */
+form button:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Estilo para o botão de adicionar tarefa */
+.add-task {
+    font-size: 1.2em;
+    display: inline-block;
+    background: #28a745;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s, border 0.3s, transform 0.2s;
+    border: 2px solid transparent;
+}
+
+/* Efeito de cor, borda e escala quando o mouse passa sobre o botão de adicionar tarefa */
+.add-task:hover {
+    background: #fff;
+    color: #28a745;
+    border: 2px solid #28a745;
+    transform: scale(1.05);
+}
+
+/* Estilo para o botão de edição */
+.edit-button {
+    background: #007bff;
+}
+
+/* Efeito de cor e escala quando o mouse passa sobre o botão de edição */
+.edit-button:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Estilo para o botão de exclusão */
+.delete-button {
+    background: #dc3545;
+}
+
+/* Efeito de cor e escala quando o mouse passa sobre o botão de exclusão */
+.delete-button:hover {
+    background: #c82333;
+    transform: scale(1.05);
+}
+
+/* Estilo para o cabeçalho da tarefa */
+.task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+
+/* Estilo para o contador de tarefas */
+.task-counter {
+    font-size: 1.2em;
+    color: #fff;
+    background: #007bff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: 2px solid #0056b3;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s, border 0.3s, transform 0.2s;
+}
+
+.task-counter:hover {
+    background: #fff;
+    color: #007bff;
+    border: 2px solid #007bff;
+    transform: scale(1.05);
+}
+
+/* Estilo para elementos div dentro de formulários */
+form div {
+    margin-bottom: 15px;
+}
+
+/* Estilo para botões dentro de formulários */
+form button, .btn {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/* Estilo para a seção da câmera */
+#camera-section {
+    margin-top: 20px;
+}
+
+/* Estilo para vídeos */
+video {
+    display: block;
+    margin: 0 auto 10px auto;  /* Centraliza o vídeo */
+    max-width: 100%;           /* Garante que o vídeo não ultrapasse a largura da div */
+}
+
+/* Estilo para parágrafos */
+p {
+    margin-top: 15px;
+}
+
+/* Estilo para botão de logout */
+.logout-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.logout-button:hover {
+    background-color: darkred;
+}
+
+/* Estilo para flex container */
+.d-flex {
+    display: flex;
+}
+
+/* Estilo para justificar conteúdo entre elementos */
+.justify-content-between {
+    justify-content: space-between;
+}
+
+/* Estilo para alinhar itens verticalmente */
+.align-items-center {
+    align-items: center;
+}
+
+/* Estilo para link de registro */
+.register-link {
+    margin-left: 20px;
+}
+
+/* Estilo para o contêiner de registro */
+.register-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Estilo para exibição do email */
+.email-display {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+/* Estilo para o contêiner de vídeo */
+.video-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Estilo para vídeo dentro do contêiner de vídeo */
+.video-container video {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+/* Estilo para botão dentro do contêiner de vídeo */
+.video-container .btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+/* Estilo para botão dentro do contêiner de vídeo ao passar o mouse */
+.video-container .btn:hover {
+    background-color: #0056b3;
+}

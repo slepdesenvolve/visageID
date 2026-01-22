@@ -1,0 +1,18 @@
+<!-- Estende o template base.html, utilizando a sintaxe do Jinja2-->
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% if task %}Editar Tarefa{% else %}Adicionar Tarefa{% endif %}</h1>
+    
+    <!-- Formulário -->
+    <form method="POST">
+        <label for="title">Título</label>
+        <input type="text" name="title" value="{{ task.title if task else '' }}">
+        <label for="description">Descrição</label>
+        <!-- Caso não tenha nada digitado, fica um espaço em branco -->
+        <textarea name="description">{{ task.description if task else '' }}</textarea>
+        <!-- Botão de envio com rótulo dinâmico -->
+        <button type="submit">{% if task %}Atualizar{% else %}Adicionar{% endif %}</button>
+    </form>
+    
+{% endblock %}

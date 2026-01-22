@@ -1,0 +1,24 @@
+<!-- Estende o template base.html, utilizando a sintaxe do Jinja2-->
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Registrar</h1>
+    
+    <!-- Formulário de registro -->
+    <form method="POST">
+        
+        <!-- Campo oculto para proteção contra CSRF -->
+        {{ form.hidden_tag() }}
+        
+        <!-- Campo de entrada para o email -->
+        <div class="form-group">
+            {{ form.email.label }}<br>
+            {{ form.email(class="form-control", id="email") }}
+        </div>
+        
+        <!-- Botão de envio do formulário -->
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Registrar</button>
+        </div>
+    </form>
+{% endblock %}

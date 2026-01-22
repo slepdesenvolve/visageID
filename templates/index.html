@@ -1,0 +1,36 @@
+<!-- Estende o template base.html, utilizando a sintaxe do Jinja2-->
+{% extends 'base.html' %}
+
+{% block content %}
+		
+		<!-- Cabeçalho da página -->
+    <h1>Gerenciador de tarefas</h1>
+    
+    <!-- Botão para adicionar nova tarefa -->
+    <div class="task-header">
+        <a href="{{ url_for('add_task') }}" class="add-task">Adicionar tarefa</a>
+        
+        <!-- Contador de tarefas criadas -->
+        <span class="task-counter">Tarefas criadas: {{ tasks|length }}</span>
+    </div>
+    
+    <!-- Lista de tarefas -->
+
+    <ul>
+        {% for task in tasks %}
+            <li>
+		            
+		            <!-- Informações da tarefa -->
+                <div class="task-info">
+                    <strong>{{ task.title }}</strong> - {{ task.description }}
+                </div>
+                
+                <!-- Botões de edição e exclusão da tarefa -->
+                <div class="task-buttons">
+                    <a href="{{ url_for('update_task', id=task.id) }}" class="edit-button">Editar</a>
+                    <a href="{{ url_for('delete_task', id=task.id) }}" class="delete-button">Deletar</a>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

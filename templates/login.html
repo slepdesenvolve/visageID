@@ -1,0 +1,36 @@
+<!-- Estende o template base.html, utilizando a sintaxe do Jinja2-->
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Login</h1>
+    
+    <!-- Formulário de login -->
+    <form method="POST">
+    
+		    <!-- Campo oculto para proteção contra CSRF -->
+        {{ form.hidden_tag() }}
+        
+        <!-- Campo de entrada para o email -->
+        <div class="form-group">
+            {{ form.email.label }}<br>
+            {{ form.email(class="form-control", id="email") }}
+        </div>
+        
+        <!-- Botão para iniciar o reconhecimento facial -->
+        <div class="form-group d-flex justify-content-between align-items-center">
+            <button type="button" id="start-recognition" class="btn btn-secondary">Iniciar Reconhecimento</button>
+            
+            <!-- Link para registrar-se, se não tiver uma conta -->
+            <span class="register-link">Não é registrado? <a href="{{ url_for('register') }}" style="color: black; text-decoration: underline;">Clique aqui</a></span>
+        </div>
+        
+        <!-- Seção para exibir a câmera e o botão de captura -->
+        <div id="camera-section" class="form-group" style="display: none;">
+            <video id="video" width="640" height="480" autoplay></video>
+            <button type="button" id="capture" class="btn btn-primary">Capturar</button>
+        </div>
+    </form>
+    
+    <!-- Script para controlar a captura de imagem, utilizando o código do login.js -->
+    <script src="{{ url_for('static', filename='js/login.js') }}"></script>
+{% endblock %}
